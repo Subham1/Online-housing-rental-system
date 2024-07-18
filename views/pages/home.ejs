@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html> 
+    <%- include('../partials/nav') %>
+<body>
+    <div class="temp-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-2 col-md-3 col-xl-3 ">
+              <div class=" col-md-6 d-flex align-items-center justify-content-start " style="padding-top:10%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                <p class="mb-0 text-bold">W</p>
+              </div>
+            </div>
+            <div class="col-10 col-md-9 col-xl-9">
+              <div class="text-centre pt-3" style="padding-left:12%;"><h1 style="font-weight: bold; font-style: italic;">Lets find your desried house </h1></div>
+            </div>
+            <div class="centre pt-3"> <form class="d-flex pb-3" action="/dis" method="post">
+              <input class="border radius-2 me-2 rounded " type="number"    name="pincode" placeholder="  Search Area"
+                aria-label="Search" >
+              <button class="btn btn-danger  " type="submit">Search </button>
+              </form>
+            </div>
+
+
+<% if(show) {%>
+
+            <div class="container">
+              <div class="class-bd1 pt-5 pb-5">
+                <h1>Houses in <%=house[0].pincode%></h1>
+                     <div class="row h-75 g-3 pt-2 mt-2">
+                      <% house.forEach(function(house){%>
+                        <div class="col  col-xl-3 col-md-4  col-sm-6">
+      
+                          <div class="card h-100"  aria-hidden="true">
+                            <a href="/house/<%=house.housename%>" style="text-decoration: none; color: black; " >
+                            <% const base64Image=house.img1.toString('base64'); %>
+                            <% const dataUrl='data:image/jpeg;base64,'+base64Image; %>
+                            <img src="<%= dataUrl %>" class="card-img-top h-10" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title"><%=house.housename %></h5>
+                              <uo>
+                                <li><%=house.type%></li>
+                                <% if(house.bach==="on") {%>
+                                
+                                <li>Bachlor available</li>
+                                <%
+                                }
+                                else
+                                {
+                                  %>
+                                  <li>Not for bachleor</li>
+                                  <%
+                                }
+                                %>
+                              </uo>
+                              
+                            </div>
+                          </div>
+                        </a>
+                        </div>
+                        <%})
+                        %>
+
+
+                          </div>
+                          </div>
+                          </div>
+                
+                          <%}
+                         %>
+        
+
+    </body>
+    <%- include('../partials/foot') %>
+</html>

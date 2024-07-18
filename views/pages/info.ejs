@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<link rel="stylesheet" type="text/css" href="style/style.css"> 
+<style>
+  .sec{
+  background-color:#9a0f0f;
+}
+  a {
+      text-decoration: none; /* Removes underline */
+      color: black; /* Change color as desired */
+  }
+  .navbar
+  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(237, 60, 95);
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 4px 8px 4px rgba(0.9, 0.1, 0.2, 0.2); 
+  
+  }
+  .btn1{
+    width: 200px;
+    height: 40px;
+    justify-content: left;
+    background-color: #16BE45;
+    display: flex;
+    object-fit: cover;
+
+  }
+  
+  </style>
+<body>
+    <div class="my-nav pb-4">
+    <nav class="navbar navbar-expand-lg  ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://png.pngtree.com/png-vector/20220623/ourmid/pngtree-food-logo-png-image_5297921.png" alt="Bootstrap" width="30" height="24">
+              </a>
+          <a class="navbar-brand" href="#">Rentro</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item text-bold">
+                <a class="nav-link " href="/addpro">Add property</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/mypro">My property</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#foot">contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#foot">About us</a>
+              </li>
+              
+              
+            </ul>
+
+    </div>
+  </div>
+</nav>
+</div>
+ </div>
+
+  <div class="container-fluid">
+    <div class="house-info pt-5">
+      <div class="row py-3 px-3 g-5" >
+        <div class="col col-md-4 col-xl-4 col-sm-6 "style="padding-left: 1%;">
+          <div class="card  vh-40" style="width: 25rem;">
+            <% var base64Image=bug.img1.toString('base64'); %>
+            <% var dataUrl='data:image/jpeg;base64,'+base64Image; %>
+            <img src="<%= dataUrl %>" class="card-img-top h-10" style="object-fit:cover;display:flex;justify-content:center;height:250px" alt="...">
+            
+          </div>
+
+        </div>
+        <div class="col col-md-4 col-xl-4 col-sm-6"style="padding-right: 4%;">
+          <div class="card  h-100" style="width: 25rem;">
+            <% var base64Image=bug.img2.toString('base64'); %>
+            <% var dataUrl='data:image/jpeg;base64,'+base64Image; %>
+            <img src="<%= dataUrl %>" class="card-img-top img-fluid"style="object-fit:cover;display:flex;justify-content:center;height:250px" alt="...">
+            
+          </div>
+
+        </div>
+        
+
+        </div>
+      </div>
+  </div>
+
+</div>
+<div class="text-bold text-center pt-2"><h1>Property details</h1></div>
+<HR>
+<div class="container pt-2">
+  <div class="info ">
+    <body style="padding: 3.5rem;">
+      <DIV class="row">
+        <div class="col col-xl-6 col-md-6">
+      <div class="row" style="margin:0;padding-left:20%;">
+        <div class="col-md-6 col-xl-6 ">
+          <table class="table ">
+            <thead colspan="2"> <div style="font-weight: bold; font-style: italic;"><h5>House details</h5></div</thead>
+    
+            <tbody>
+              <tr>
+                <th>House Name</th>
+                <td><%=house.housename%></td>
+              </tr>
+              <tr>
+                <th>Flat No</th>
+                <td><%=house.houseno%></td>
+              </tr>
+              <tr>
+                <th>Address</th>
+                <td><%=house.address%></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td><%=house.type%></td>
+              </tr>
+              <tr>
+                <th ><div class="text-bold">Price</div></th>
+                <td><%=house.price%></td>
+              </tr>
+              <tr>
+                <th>Bachlors availabe</th>
+                 <% if(house.bach==="on") {%>
+                          
+                  <td>Bachlor available</td>
+                  <%
+                  }
+                  else
+                  {
+                    %>
+                    <td>No bachleor</td>
+                    <%
+                  }
+                  %>
+              </tr>
+              <HR>
+              
+    
+            </tbody>
+          </table>
+        </div>
+       
+      </div>
+    </div>
+    <div class="col col-xl-6 col-md-6">
+      <div class="row" style="margin:0;padding-left:20%;">
+        <div class="col-md-6 col-xl-6 ">
+          <table class="table ">
+            <thead colspan="2"> <div style="font-weight: bold; font-style: italic;"><h5>Owner Details</h5></div</thead>
+    
+            <tbody>
+              <tr>
+                <th class="">Owner name</th>
+                <td><%=owner.username%></td>
+              </tr>
+              <tr>
+                <th>E-mail</th>
+                <td><%=owner.email%></td>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <td><%=owner.mobile%></td>
+              </tr>
+             
+              <tr class="row pt-5" >
+                <td style="padding-left: 30%;">
+                  <div class="container-fluid">
+                  <div class="row">
+                  <div class="col col-xl-12 col-md-12">
+                  <button class="btn bg-secondry btn1 text-center " id="but"    data-whatsapp-number="<%= owner.mobile %>">
+                                          <div class="row">
+                                                     <div class=" col col-xl-2 col-md-2 col-sm-2 ">
+                    
+                                                         <i class="bi bi-whatsapp"></i>
+                                                          </div>
+                                                    <div class="col col-xl-10  col-md-10 col-sm-10" style="padding-left: 0px;"><h5>Whatsapp them </h5>
+                                                           </div>
+                                           </div>
+                                          </button>
+                  </div>
+                  
+             
+                 </div>
+                </div>
+                
+                
+               </td>
+              </tr>
+
+                  <script>
+                   
+                                      document.getElementById('but').addEventListener('click', function() {
+                                       var ownerNumber = this.getAttribute('data-whatsapp-number');
+                                        var whatsappURL = 'https://wa.me/' + ownerNumber;
+                                            window.open(whatsappURL, '_blank');  
+                                                    
+                                              });
+    
+                    </script>
+               
+              <HR>
+              
+    
+            </tbody>
+          </table>
+        </div>
+       
+      </div>
+    </div>
+    
+    </DIV>
+  </div>
+</div>
+    </body>
+    <%- include('../partials/foot') %>
+</html>
