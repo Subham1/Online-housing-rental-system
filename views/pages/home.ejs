@@ -1,32 +1,170 @@
 <!DOCTYPE html>
 <html> 
     <%- include('../partials/nav') %>
+    <style>
+      *{
+          padding: 0;
+          margin: 0;
+      }
+
+      /* body{
+          background-color: rgb(36, 123, 36);
+      } */
+      .search-container {
+          position: relative;
+          display: flex;
+          align-items: center;
+          margin-left: 40px;
+      }
+
+      .search-bar {
+          width: 180px; /* Adjust width as needed */
+          padding: 10px 20px 10px 30px; /* Adjusted padding for the icon */
+          font-size: 13px;
+          border: 2px solid black;
+          border-radius: 25px;
+          background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency as needed */
+          color: #131111;
+          outline: none;
+          height: 40px;
+      }
+
+      ::placeholder {
+          color: rgb(16, 16, 16);
+      }
+
+      .search-container i {
+          position: absolute;
+          left: 200px; /* Position the icon inside the input field */
+          top: 50%;
+          transform: translateY(-50%);
+          color: #999;
+      }
+
+      .categories {
+          
+          height: 100px;
+          display: flex;
+          align-items: center;
+          /* background-color: aquamarine; */
+          gap: 25px; /* Adjust gap as needed */
+          padding: 0 80px; /* Add padding to create space around the elements */
+          outline: none;
+      }
+
+      .cat {
+          height: 30px;
+          width: 200px;
+          margin-right: 15px;
+          margin-left: 15px;
+      }
+
+
+      select {
+          font-size: 16px;
+          text-align: center;
+          border-radius: 50px;
+          height: 40px;
+          width: 200px;
+          transition: background-color 0.3s ease;
+          color: #0c0c0c;
+         
+          font-weight: bold;
+      }
+
+      .submit-button{
+          color: white;
+          margin-left: 50px;
+          
+      }
+
+      button{
+          background-color: rgb(27, 26, 27);
+          height: 45px;
+          width: 80px;
+          text-align: center;
+          border-radius: 30px;
+          color: white;
+          border: none;
+      }
+
+      .bg-img{
+        height: 350px;
+      }
+      .bg-img img{
+        height: 170%;
+        width: 100%;
+       object-fit: fill;
+      }
+  </style>
+
 <body>
-    <div class="temp-body">
-        <div class="container-fluid">
+    <div class="temp-body" style="padding-top: 0px;">
+        <!-- <div class="container-fluid"> -->
           <div class="row">
             <div class="col-2 col-md-3 col-xl-3 ">
-              <div class=" col-md-6 d-flex align-items-center justify-content-start " style="padding-top:10%;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                </svg>
-                <p class="mb-0 text-bold">W</p>
+              <div class=" col-md-6 d-flex align-items-center justify-content-start " >
+                
               </div>
             </div>
-            <div class="col-10 col-md-9 col-xl-9">
-              <div class="text-centre pt-3" style="padding-left:12%;"><h1 style="font-weight: bold; font-style: italic;">Lets find your desried house </h1></div>
+            <!-- <div class="col-10 col-md-9 col-xl-9">
+              <div class="text-centre pt-3" style="padding-left:12%;"><h1 style="font-weight: bold; font-style: italic;">Lets find your Desired House </h1></div>
+            </div> -->
+            <div class="bg-img">
+              <img src="image/bg.jpg">
+              
             </div>
-            <div class="centre pt-3"> <form class="d-flex pb-3" action="/dis" method="post">
-              <input class="border radius-2 me-2 rounded " type="number"    name="pincode" placeholder="  Search Area"
-                aria-label="Search" >
-              <button class="btn btn-danger  " type="submit">Search </button>
+            <div class="container"style="margin-left: 390px; padding-top:45px; margin-top:0;">
+              <div class="categories" >
+                <div class="cat">
+                    <select id="Residential" onchange="Residential(this)">
+                        <option value="">Residential</option>
+                        <option value="">Flat</option>
+                        <option value="">House</option>
+                        <option value="">Villa</option>
+                        <option value="">Office Space</option>
+                        <option value="">Shop/Showroom</option>
+                    </select>
+                </div>
+                <div class="cat">
+                    <select id="Type of Flat" onchange="TypeofFlat(this)">
+                        <option value="">Type of Flat</option>
+                        <option value="">1BHK</option>
+                        <option value="">2BHK</option>
+                        <option value="">3BHK</option>
+                    </select>
+                </div>
+                <div class="cat">
+                    <select id="Cost Range" onchange="CostRange(this)">
+                        <option value="">Cost Range</option>
+                        <option value="">1k-5k</option>
+                        <option value="">5k-10k</option>
+                        <option value="">15k-20k</option>
+                        <option value="">20k & above</option>
+                    </select>
+                </div>
+                <div class="cat">
+                  <select id="Cost Range" onchange="CostRange(this)">
+                      <option value="">Bachelor</option>
+                      <option value="">Family</option>
+                      <option value="">Married Couples</option>
+                     
+                  </select>
+              </div>
+               
+            </div>
+            </div>
+            <div class="centre pt-3" style="padding-left: 38%;"> <form class="d-flex pb-3" action="/dis" method="post">
+              <input class="border radius-2 me-2 rounded " type="number"    name="pincode" placeholder="Search with pincode"
+                aria-label="Search" style="padding-left: 10px;border-radius: 1.5rems;" >
+              <button class="btn btn-danger  " type="submit">Search  </button>
               </form>
             </div>
 
 
 <% if(show) {%>
 
-            <div class="container">
+            <div class="container pt-5">
               <div class="class-bd1 pt-5 pb-5">
                 <h1>Houses in <%=house[0].pincode%></h1>
                      <div class="row h-75 g-3 pt-2 mt-2">
@@ -34,12 +172,14 @@
                         <div class="col  col-xl-3 col-md-4  col-sm-6">
       
                           <div class="card h-100"  aria-hidden="true">
+
                             <a href="/house/<%=house.housename%>" style="text-decoration: none; color: black; " >
                             <% const base64Image=house.img1.toString('base64'); %>
                             <% const dataUrl='data:image/jpeg;base64,'+base64Image; %>
                             <img src="<%= dataUrl %>" class="card-img-top h-10" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title"><%=house.housename %></h5>
+                           
+                              <h5 class="card-title"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/like--v1.png" alt="like--v1"/><%=house.housename %></h5>
                               <uo>
                                 <li><%=house.type%></li>
                                 <% if(house.bach==="on") {%>
@@ -54,6 +194,7 @@
                                   <%
                                 }
                                 %>
+                                <li><%=house.price%></li>
                               </uo>
                               
                             </div>
@@ -73,5 +214,6 @@
         
 
     </body>
+    <div class="pt-5"></div>
     <%- include('../partials/foot') %>
 </html>

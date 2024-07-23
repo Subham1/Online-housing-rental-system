@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-section {
+            background-color: #6c63ff;
+            color: white;
+        }
+
+        .profile-container {
+            padding: 30px;
+            box-shadow: 8px 8px 8px 8px rgba(0.2, 0.2, 0.2, 0.2);
+            width: 70%;
+            height:70%;
+            border-radius: 40px;
+        }
+
+        .profile-container h2 {
+            margin-bottom: 17px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background-color: #F0EDFF;
+            padding: 10px;
+        }
+
+        .input-group label {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group .icon {
+            padding: 10px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 5px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background-color: #F0EDFF;
+            font-size: 16px;
+        }
+
+        .stats-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px;
+            background-color: #F0EDFF;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .stats-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .stats-group span {
+            font-size: 16px;
+        }
+
+        .right-section img {
+            height: 90%;
+            width: 80%;
+            object-fit: cover;
+        }
+
+        h2{
+            color: rgb(136, 17, 241);
+            font-size: 27px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #6c63ff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="profile-container">
+                <h2>User Profile</h2>
+                <div class="input-group">
+                    <label for="username">
+                        <input type="text" id="username" value="Name:<%=name%>" readonly>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label for="age">
+                        <input type="text" id="mobile" value="Age:18" readonly>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label for="Gender" >
+                        <input type="text" id="mobile" value="Gender:Male" readonly>
+                       
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label for="email">
+                        <input type="text" id="email" value="Email:<%=email%>" readonly>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label for="mobile">
+                        <input type="text" id="mobile" value="Mobile Number:<%=mobile%>" readonly>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label for="Address">
+                        <input type="text" id="Address" value="Address:Vishakapatnam,AP" readonly>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <img src="image/girl3.jpg" alt="Person with tablet">
+        </div>
+    </div>
+</body>
+</html>

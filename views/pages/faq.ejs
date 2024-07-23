@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <%- include('../partials/nav') %>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .faq-question h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .faq-toggle::before {
+            content: '+';
+            font-size: 24px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #f1f3f5;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .faq-item input {
+            display: none;
+        }
+
+        .faq-item input:checked + .faq-question + .faq-answer {
+            display: block;
+        }
+
+        .faq-item input:checked + .faq-question .faq-toggle::before {
+            transform: translateY(-50%) rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1 style="color:rgb(136, 17, 241);">Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq1">
+            <label class="faq-question" for="faq1">
+                <h2>How do I list my property?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>To list your property, you need to create an account and navigate to the 'List Your Property' section. Fill in the necessary details and submit your listing for approval.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq2">
+            <label class="faq-question" for="faq2">
+                <h2>How do I contact the property owner?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>You can contact the property owner by clicking on the 'Contact Owner' button available on the property listing page. This will allow you to send a message directly to the owner.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq3">
+            <label class="faq-question" for="faq3">
+                <h2>Can I modify my property listing?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>Yes, you can modify your property listing at any time by logging into your account and navigating to the 'My Listings' section. Here, you can edit the details of your property.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq4">
+            <label class="faq-question" for="faq4">
+                <h2>What should I do if I forget my password?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>If you forget your password, click on the 'Forgot Password' link on the login page. Follow the instructions to reset your password via email.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq5">
+            <label class="faq-question" for="faq5">
+                <h2>How can I ensure the safety of my rental transactions?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>We recommend using our secure payment system for all rental transactions. Avoid direct cash payments and always communicate through our platform to ensure safety and security.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq6">
+            <label class="faq-question" for="faq6">
+                <h2>How do I leave a review for a property?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>After your rental period ends, you will receive an email prompting you to leave a review. You can also leave a review by logging into your account and navigating to the 'My Rentals' section.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq7">
+            <label class="faq-question" for="faq7">
+                <h2>What is the cancellation policy?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>The cancellation policy varies depending on the property. Please refer to the specific property listing for detailed cancellation policies. Generally, cancellations made within 24 hours of booking may be eligible for a full refund.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq8">
+            <label class="faq-question" for="faq8">
+                <h2>How do I report an issue with a property?</h2>
+                <span class="faq-toggle"></span>
+            </label>
+            <div class="faq-answer">
+                <p>If you encounter any issues with a property, you can report it by clicking the 'Report Issue' button on the property listing page. Provide the necessary details and our team will look into it promptly.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('../partials/foot') %>
+</html>

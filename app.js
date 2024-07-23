@@ -98,18 +98,33 @@ app.post('/login', function (req, res) {
             const a = result[0];
             var name = a.username;
             req.session.username = result[0].email;
-            req.session.user = result[0].mobile;
+            req.session.user = result[0].username;
+            req.session.mobile=result[0].mobile;
             var logged = true;
             var show = false
-            res.render('pages/home', { logged, name, show, loc: "" });
+            res.render('pages/home', { logged, name, show,});
         }
     });
 
 
 });
+app.get('/tm',function(req,res)
+{
+    res.render('pages/tm',{logged:true});
+});
+app.get('/faq',function(req,res)
+{
+    res.render('pages/faq',{logged:true});
+});
+app.get('/h1',function(req,res){
+    res.render('pages/home',{logged:true,show:false});
+});
+app.get('/profile',function(req,res){
+    res.render('pages/profile',{name:req.session.user,email:req.session.username,mobile:req.session.mobile});
+})
 // owner login and signup
 app.get('/ologin', function (req, res) {
-    var logged = false; 9
+    var logged = false; 
     res.render('pages/ologin', { error: "", logged });
 
 });
@@ -166,6 +181,7 @@ app.post('/ologin', function (req, res) {
             var logged = true;
             req.session.username = result[0].email;
             req.session.user = result[0].username;
+            req.session.mobile=result[0].mobile;
             res.render('pages/ownerhome', { logged, name, loc: "" });
         }
 
@@ -241,6 +257,9 @@ app.get("/mypro", function (req, res) {
 
     })
 });
+app.get('/wish',function(req,res){
+    res.render('pages/wishlist',{logged:true});
+})
 app.get("/house/:housename", function (req, res) {
     const housename = req.params.housename;
     const sql = "select * from houses where housename=?";

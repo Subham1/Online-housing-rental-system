@@ -23,7 +23,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(237, 60, 95);
+    background-color: rgb(136, 17, 241);
     padding: 10px;
     z-index: 1000;
     box-shadow: 4px 8px 4px rgba(0.9, 0.1, 0.2, 0.2); 
@@ -37,6 +37,10 @@
     display: flex;
     object-fit: cover;
 
+  }
+
+  h4{
+    margin-left: 250px;
   }
   
   </style>
@@ -52,24 +56,21 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 15px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/h1"><h6 class="text-light">Home</h6></a>
               </li>
-              <li class="nav-item text-bold">
-                <a class="nav-link " href="/addpro">Add property</a>
-              </li>
+             
               <li class="nav-item">
-                <a class="nav-link " href="/mypro">My property</a>
+                <a class="nav-link " href="/faq"><h6 class="text-light">FAQ</h6></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#foot">contact us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#foot">About us</a>
+                <a class="nav-link " href="#/tm"><h6 class="text-light">Terms & Conditions</h6></a>
               </li>
               
-              
+              <li class="nav-item">
+                <a class="nav-link " href="#foot"><h6 class="text-light " >About us</h6></a>
+              </li>
             </ul>
 
     </div>
@@ -83,7 +84,7 @@
       <div class="row py-3 px-3 g-5" >
         <div class="col col-md-4 col-xl-4 col-sm-6 "style="padding-left: 1%;">
           <div class="card  vh-40" style="width: 25rem;">
-            <% var base64Image=bug.img1.toString('base64'); %>
+            <% var base64Image=house.img1.toString('base64'); %>
             <% var dataUrl='data:image/jpeg;base64,'+base64Image; %>
             <img src="<%= dataUrl %>" class="card-img-top h-10" style="object-fit:cover;display:flex;justify-content:center;height:250px" alt="...">
             
@@ -92,7 +93,16 @@
         </div>
         <div class="col col-md-4 col-xl-4 col-sm-6"style="padding-right: 4%;">
           <div class="card  h-100" style="width: 25rem;">
-            <% var base64Image=bug.img2.toString('base64'); %>
+            <% var base64Image=house.img2.toString('base64'); %>
+            <% var dataUrl='data:image/jpeg;base64,'+base64Image; %>
+            <img src="<%= dataUrl %>" class="card-img-top img-fluid"style="object-fit:cover;display:flex;justify-content:center;height:250px" alt="...">
+            
+          </div>
+
+        </div>
+        <div class="col col-md-4 col-xl-4 col-sm-6"style="padding-right: 4%;">
+          <div class="card  h-100" style="width: 25rem;">
+            <% var base64Image=house.img3.toString('base64'); %>
             <% var dataUrl='data:image/jpeg;base64,'+base64Image; %>
             <img src="<%= dataUrl %>" class="card-img-top img-fluid"style="object-fit:cover;display:flex;justify-content:center;height:250px" alt="...">
             
@@ -110,10 +120,10 @@
 <HR>
 <div class="container pt-2">
   <div class="info ">
-    <body style="padding: 3.5rem;">
+    <body style="padding: 3.0rem;">
       <DIV class="row">
         <div class="col col-xl-6 col-md-6">
-      <div class="row" style="margin:0;padding-left:20%;">
+      <div class="row" style="margin:0;padding-left:10%;">
         <div class="col-md-6 col-xl-6 ">
           <table class="table ">
             <thead colspan="2"> <div style="font-weight: bold; font-style: italic;"><h5>House details</h5></div</thead>
@@ -154,37 +164,9 @@
                   }
                   %>
               </tr>
-              <HR>
               
-    
-            </tbody>
-          </table>
-        </div>
-       
-      </div>
-    </div>
-    <div class="col col-xl-6 col-md-6">
-      <div class="row" style="margin:0;padding-left:20%;">
-        <div class="col-md-6 col-xl-6 ">
-          <table class="table ">
-            <thead colspan="2"> <div style="font-weight: bold; font-style: italic;"><h5>Owner Details</h5></div</thead>
-    
-            <tbody>
-              <tr>
-                <th class="">Owner name</th>
-                <td><%=owner.username%></td>
-              </tr>
-              <tr>
-                <th>E-mail</th>
-                <td><%=owner.email%></td>
-              </tr>
-              <tr>
-                <th>Number</th>
-                <td><%=owner.mobile%></td>
-              </tr>
-             
               <tr class="row pt-5" >
-                <td style="padding-left: 30%;">
+                <td style="padding-left: 0%;">
                   <div class="container-fluid">
                   <div class="row">
                   <div class="col col-xl-12 col-md-12">
@@ -208,16 +190,74 @@
                </td>
               </tr>
 
+
                   <script>
                    
                                       document.getElementById('but').addEventListener('click', function() {
                                        var ownerNumber = this.getAttribute('data-whatsapp-number');
-                                        var whatsappURL = 'https://wa.me/' + ownerNumber;
+                                        var whatsappURL = 'https://wa.me/' + "+91"+ ownerNumber;
                                             window.open(whatsappURL, '_blank');  
                                                     
                                               });
     
                     </script>
+              <HR>
+              
+    
+            </tbody>
+          </table>
+        </div>
+       
+      </div>
+    </div>
+    <div class="col col-xl-6 col-md-6">
+      <div class="row">
+        <div class="col-md-6 col-xl-6 ">
+          <table class="table ">
+            <thead colspan="2"> <div style="font-weight: bold; font-style: italic;"><h5>Owner Details</h5></div</thead>
+    
+            <tbody>
+              <tr>
+                <th class="">Owner name</th>
+                <td><%=owner.username%></td>
+              </tr>
+              <tr>
+                <th>E-mail</th>
+                <td><%=owner.email%></td>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <td><%=owner.mobile%></td>
+              </tr>
+              
+                <tr>
+                  <th>Discription</th>
+                </tr>
+                <tr >
+                  <td colspan="2" style="padding-left: 10px;"><%=house.link%></td>
+                </tr>
+                <tr>
+                <td>
+                  <h4>Location</h4>
+                  <div class="map-container">
+                    <!-- Google Maps Embed API iframe -->
+                    <!-- <button class="btn bg-dark text-light pb-5" style="width: 150px; height:10px; margin-left: 200px;"><h5>Location:</h5></button></h1> -->
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509377!2d144.95373531590407!3d-37.81627974202133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57703efb4e1a429!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1634884290347!5m2!1sen!2sau" 
+                      width="570px%" 
+                      height="350px"
+                     
+                      allowfullscreen="" 
+                      loading="lazy" style="border-color: black;border: 1px;padding-top: 10px;">
+                    </iframe>
+                  </div>
+                </td>
+              </tr>
+             
+                  
+
+
+                  
                
               <HR>
               
@@ -232,6 +272,7 @@
     </DIV>
   </div>
 </div>
+
     </body>
-    <%- include('../partials/foot') %>
+   <div class="container-fluid" ><%- include('../partials/foot') %></div>
 </html>

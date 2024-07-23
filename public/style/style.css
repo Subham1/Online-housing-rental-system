@@ -8,7 +8,7 @@
 }
 .my-nav
 {
-    background-color:var(--bs-secondary-bg);
+  background-color: rgb(136, 17, 241);
 }
 .temp-body
 {
@@ -55,7 +55,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(237, 60, 95);
+    background-color: rgb(136, 17, 241);
     padding: 10px;
     z-index: 1000;
     box-shadow: 4px 8px 4px rgba(0.9, 0.1, 0.2, 0.2); 
@@ -160,7 +160,7 @@
 
 
 .cardbody-color{
-  background-color: #f4e0e0;
+  background-color: #d787f6;
 }
 
 .a{
@@ -234,7 +234,7 @@
     
   }
   .addpro-bg{
-    background-image:url(https://png.pngtree.com/background/20231117/original/pngtree-red-background-with-a-cluster-of-blurry-houses-rendered-in-3d-picture-image_6299789.jpg);
+    
   }
   .class-bd1
   {

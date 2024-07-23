@@ -15,20 +15,25 @@
             <a class="navbar-brand" href="#">
                 <img src="https://png.pngtree.com/png-vector/20220623/ourmid/pngtree-food-logo-png-image_5297921.png" alt="Bootstrap" width="30" height="24">
               </a>
-          <a class="navbar-brand" href="#">Rentro</a>
+          <a class="navbar-brand text-light" href="#">Rentro</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 15px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/h1"><h6 class="text-light" >Home</h6>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">Link</a>
+                <a class="nav-link " href="/faq"><h6 class="text-light" >FAQ</h6></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#foot">About us</a>
+                <a class="nav-link " href="/tm"><h6 class="text-light " >Terms & Conditions</h6></a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link " href="#foot"><h6 class="text-light " >About us</h6></a>
               </li>
               
               
@@ -36,14 +41,17 @@
 
     <% if(logged){%>
       
+      
       <form class="d-flex" role="search">
-       <img src="icon.png">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-          <path d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/>
-        </svg>
+      <a href="/profile">  <img width="48" height="48" src="https://img.icons8.com/fluency/48/user-male-circle--v1.png" alt="user-male-circle--v1"/></a>
         <div class="text-bold" style="padding-left: 10px;padding-right: 10px;">
-       <p>WELCOME....<%=name%></p>
+       
       </div>
+      </form>
+
+      <form class="d-flex" role="search">
+      <a href="/wish" > <img width="32" height="32" src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/external-wishlist-retail-anggara-glyph-anggara-putra.png" alt="external-wishlist-retail-anggara-glyph-anggara-putra"/></a>
+       
       </form>
       <%}else {%>
         
