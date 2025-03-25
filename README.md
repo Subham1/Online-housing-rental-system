@@ -1,4 +1,7 @@
 # Rentor: Online Housing Rental System
+## 🚀 Demo Video
+
+[Click here to watch the demo video](https://drive.google.com/file/d/1EQ8hs0RjyQf52GQRL8FdH1mStaLAYe9e/view?usp=drive_link)
 
 Rentor is an online housing rental system that allows users to search and rent properties based on specific areas. Property owners can add and manage their rental listings. The application provides a user-friendly interface for both renters and property owners.
 
